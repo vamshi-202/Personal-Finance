@@ -1,0 +1,45 @@
+﻿@model PersonalFinance.Models.ViewModels.DashboardViewModel
+@{
+  ViewData["Title"] = "Dashboard";
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+  <h2 class="text-primary text-center mb-4">Welcome back, @Context.Session.GetString("UserName")!</h2>
+
+  <div class="row text-center">
+    <div class="col-md-4">
+      <div class="dashboard-card border border-success text-success p-4 mb-4">
+        <h5>Total Income</h5>
+        <h3>₹@Model.TotalIncome.ToString("N2")</h3>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="dashboard-card border border-danger text-danger p-4 mb-4">
+        <h5>Total Expense</h5>
+        <h3>₹@Model.TotalExpense.ToString("N2")</h3>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="dashboard-card border border-primary text-primary p-4 mb-4">
+        <h5>Balance</h5>
+        <h3>₹@Model.Balance.ToString("N2")</h3>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<Style>
+  .dashboard-card {
+    border-radius: 12px;
+    background: linear-gradient(135deg, #e0f7e9, #f0fff4);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease-in-out;
+  }
+
+    .dashboard-card:hover {
+      transform: scale(1.02);
+    }
+
+</Style>

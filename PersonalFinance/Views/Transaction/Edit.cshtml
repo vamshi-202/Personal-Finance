@@ -1,0 +1,50 @@
+﻿@model PersonalFinance.Models.DTO.Transaction.UpdateTransactionDto
+
+@{
+  ViewData["Title"] = "Edit Transaction";
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+  <div class="card shadow-sm p-4 rounded" style="max-width: 600px; margin: auto;">
+    <h2 class="text-center mb-4 text-primary">Edit Transaction</h2>
+
+    <form asp-action="Edit" method="post">
+      <input type="hidden" asp-for="TransactionId" />
+
+      <div class="mb-3">
+        <label asp-for="CategoryId" class="form-label"></label>
+        <select asp-for="CategoryId" asp-items="ViewBag.Categories" class="form-control">
+          <option value="">-- Select Category --</option>
+        </select>
+        <span asp-validation-for="CategoryId" class="text-danger"></span>
+      </div>
+
+      <div class="mb-3">
+        <label asp-for="Amount" class="form-label"></label>
+        <input asp-for="Amount" class="form-control" />
+        <span asp-validation-for="Amount" class="text-danger"></span>
+      </div>
+
+      <div class="mb-3">
+        <label asp-for="TransactionDate" class="form-label"></label>
+        <input asp-for="TransactionDate" type="date" class="form-control" />
+        <span asp-validation-for="TransactionDate" class="text-danger"></span>
+      </div>
+
+      <div class="mb-3">
+        <label asp-for="Description" class="form-label"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-success px-4">Update</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+@section Scripts {
+  <partial name="_ValidationScriptsPartial" />
+}

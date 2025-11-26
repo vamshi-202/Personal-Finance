@@ -1,0 +1,41 @@
+﻿@model PersonalFinance.Models.DTO.User.UpdateUserDto
+
+@{
+  ViewData["Title"] = "Update Profile";
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+  <div class="card shadow-sm p-4 rounded" style="max-width: 500px; margin: auto; background-color: #ffffff; border: 1px solid #ccc;">
+    <h2 class="text-center mb-4" style="color: #0d6efd;">Update Profile</h2>
+
+    @if (ViewBag.Message != null)
+    {
+      <div class="alert alert-success text-center">@ViewBag.Message</div>
+    }
+
+    <form asp-action="Profile" method="post">
+      <input type="hidden" asp-for="UserId" />
+
+      <div class="mb-3">
+        <label asp-for="UserName" class="form-label text-dark"></label>
+        <input asp-for="UserName" class="form-control" />
+        <span asp-validation-for="UserName" class="text-danger"></span>
+      </div>
+
+      <div class="mb-3">
+        <label asp-for="Email" class="form-label text-dark"></label>
+        <input asp-for="Email" type="email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary px-4">Update</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+@section Scripts {
+  <partial name="_ValidationScriptsPartial" />
+}
