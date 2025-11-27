@@ -45,5 +45,13 @@ This system is designed to help individuals understand and control their financi
 
 https://github.com/user-attachments/assets/d65ee522-e0d4-458a-bfcc-616aedc69e5d
 
+Thanks for stopping by!
+This repository is part of my journey in building real-world finance applications using modern web development technologies.
 
+📢 If you're exploring this repository:
+
+✔ Feel free to explore the code
+✔ ⭐ Star or fork this repo if you find it helpful
+✔ 💭 Share suggestions or improvements
+✔ 🛠 Open issues for discussions or collaboration
 
