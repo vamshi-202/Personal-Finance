@@ -14,8 +14,8 @@
         <label class="form-label">Type</label>
         <select name="type" class="form-select">
           <option value="">-- All Types --</option>
-          <option value="Income" @@(ViewBag.Type == "Income" ? "selected" : "")>Income</option>
-          <option value="Expense" @@(ViewBag.Type == "Expense" ? "selected" : "")>Expense</option>
+          <option value="Income" selected="@(ViewBag.Type == "Income")">Income</option>
+          <option value="Expense" selected="@(ViewBag.Type == "Expense")">Expense</option>
         </select>
       </div>
 
